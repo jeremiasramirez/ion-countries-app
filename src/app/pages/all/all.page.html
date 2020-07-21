@@ -1,0 +1,69 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="tertiary">
+
+    <ion-buttons slot="start">
+      <ion-icon slot="icon-only" name="flag"></ion-icon> 
+    </ion-buttons>
+
+    <ion-title>All</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-spinner *ngIf="spinner.on" color="light" name="crescent"></ion-spinner>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+ 
+
+<ion-content >
+
+  <ion-refresher slot="fixed"  >
+    <ion-refresher-content ></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-list *ngIf="spinner.on">
+    <ion-item   class="slow" *ngFor="let item of [1,1,1,1,1,1,1,1,1,1] ">
+     
+      <ion-thumbnail slot="start">
+        <ion-skeleton-text style="width: 85%"></ion-skeleton-text>
+      </ion-thumbnail>
+      
+      <ion-label>  
+        <ion-skeleton-text style="width: 80%"></ion-skeleton-text>
+        <ion-skeleton-text style="width: 40%"></ion-skeleton-text>  
+      </ion-label>
+        
+
+    </ion-item> 
+
+  </ion-list>
+ 
+  <ion-list *ngIf="!spinner.on" >
+    
+   
+    <ion-item   class="slow" *ngFor="let item of ALL_DATA | slice:startData:endData" detail>
+     
+      <ion-thumbnail slot="start">
+        <ion-img [src]="item.flag"></ion-img>
+      </ion-thumbnail>
+
+      <ion-label> {{ item.name }} </ion-label>
+
+    </ion-item> 
+  
+
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/main/search" color="tertiary">
+      <ion-icon name="search"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-infinite-scroll  treshold="1px" (ionInfinite)="changeMore($event)">
+    <ion-infinite-scroll-content color="tertiary" loadingSpinner="crescent"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+</ion-content>
