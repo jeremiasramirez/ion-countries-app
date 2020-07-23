@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { DarkService }from "../../services/theme.service"
+import { FeatureService }from "../../services/feature.service"
 @Component({
   selector: 'app-explore',
   templateUrl: './explore.page.html',
   styleUrls: ['./explore.page.scss'],
   providers: [
-    DarkService
+    FeatureService
   ]
 })
 export class ExplorePage   {
 
-  public color:any;
-  constructor(public theme:DarkService) { 
-    this.color = this.theme.getColorTheme()
+  
+  constructor(public theme:FeatureService) { 
+    
   }
 
    

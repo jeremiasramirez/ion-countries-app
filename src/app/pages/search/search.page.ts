@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import  { DarkService } from "../../services/theme.service"
+import  { FeatureService } from "../../services/feature.service"
 @Component({
   selector: 'app-search',
   templateUrl: './search.page.html',
   styleUrls: ['./search.page.scss'],
   providers:[ 
-    DarkService
+    FeatureService
   ]
 })
 export class SearchPage implements OnInit {
   public color : any;
-  constructor(public theme:DarkService) {
-    this.color= this.theme.getColorTheme()
+  constructor(public theme:FeatureService) {
+     
    
   }
 

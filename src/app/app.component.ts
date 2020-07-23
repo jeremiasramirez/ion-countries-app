@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { DarkService } from "./services/theme.service"
+import { FeatureService } from "./services/feature.service"
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   providers: [
-    DarkService
+    FeatureService
   ]
 })
 export class AppComponent {
@@ -18,10 +18,10 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public theme:DarkService
+    public theme:FeatureService
   ) {
     this.initializeApp();
-    this.color=this.theme.getColorTheme()
+  
  
   }
 

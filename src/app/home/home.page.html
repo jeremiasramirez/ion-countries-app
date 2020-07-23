@@ -2,23 +2,21 @@
 
     <ion-slides pager="true" style="height:100%">
 
-        <ion-slide>
-            
-            
-                <ion-img src="../../assets/img-slides/worlds.svg">
 
-                </ion-img>
-          
+        <ion-slide *ngFor="let slide of slidesPhoto; let index=index">
+             
+            <div style="margin-top: -10px">
+
+                <ion-img [src]="slide.img"></ion-img>
+               
+                <div style="margin: 1em 0">
+                    <h4 >{{slide.title}}</h4>
+                </div>
+
+                <ion-button (click)="redirectToHome()" size="small" color="tertiary" expand="full" *ngIf="index==1">Start</ion-button>
+           </div>   
         </ion-slide>
-
-        <ion-slide>
-            
- 
-                <ion-img src="../../assets/img-slides/searchs.png">
-
-                </ion-img>
-         
-        </ion-slide>
+  
 
     </ion-slides>
 
