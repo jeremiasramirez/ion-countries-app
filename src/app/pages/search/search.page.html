@@ -21,15 +21,10 @@
 
   <ion-list>
 
-    <ion-item class="slow" *ngFor="let item of searched | search:keys" detail>
-
-      <ion-thumbnail slot="start">
-        <ion-img [src]="item.flag"></ion-img>
-      </ion-thumbnail>
-
-      <ion-label>{{item.name}}</ion-label>  
-
-    </ion-item>
+ 
+      <app-each-item [data]="searched" [key]="keys"></app-each-item>
+     
+   
 
   </ion-list>
 

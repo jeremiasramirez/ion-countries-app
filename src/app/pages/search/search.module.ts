@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SearchPageRoutingModule } from './search-routing.module';
 import  { PipeSearch } from "../../pipes/search.pipe"
 import { SearchPage } from './search.page';
-
+import {  EachItemComponent } from "../../components/each-item/each-item.component"
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,6 @@ import { SearchPage } from './search.page';
     IonicModule,
     SearchPageRoutingModule
   ],
-  declarations: [SearchPage,PipeSearch]
+  declarations: [SearchPage,PipeSearch, EachItemComponent]
 })
 export class SearchPageModule {}

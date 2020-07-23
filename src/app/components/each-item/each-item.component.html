@@ -1,0 +1,8 @@
+ 
+<ion-item class="slow" *ngFor="let item of data | search:key" detail>
+  <ion-thumbnail slot="start">
+    <ion-img [src]="item.flag"></ion-img>
+  </ion-thumbnail>
+  
+  <ion-label>{{item.name}}</ion-label> 
+</ion-item>
