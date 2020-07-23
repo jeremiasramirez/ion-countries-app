@@ -19,23 +19,8 @@
 <ion-content >
 
  
+  <app-skeleton-template [spinner]="spinner"></app-skeleton-template>
   
-  <ion-list *ngIf="spinner.on">
-    <ion-item   class="slow" *ngFor="let item of [1,1,1,1,1,1,1,1,1,1] ">
-     
-      <ion-thumbnail slot="start">
-        <ion-skeleton-text style="width: 85%"></ion-skeleton-text>
-      </ion-thumbnail>
-      
-      <ion-label>  
-        <ion-skeleton-text style="width: 80%"></ion-skeleton-text>
-        <ion-skeleton-text style="width: 40%"></ion-skeleton-text>  
-      </ion-label>
-        
-
-    </ion-item> 
-
-  </ion-list>
  
   <ion-list *ngIf="!spinner.on" >
     
@@ -54,7 +39,7 @@
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/main/search" color="tertiary">
+    <ion-fab-button routerLink="/home/search" color="tertiary">
       <ion-icon name="search"></ion-icon>
     </ion-fab-button>
   </ion-fab>

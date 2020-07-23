@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { MainPage } from './main.page';
+import { SkeletonTemplateComponent } from './skeleton-template.component';
 
-describe('MainPage', () => {
-  let component: MainPage;
-  let fixture: ComponentFixture<MainPage>;
+describe('SkeletonTemplateComponent', () => {
+  let component: SkeletonTemplateComponent;
+  let fixture: ComponentFixture<SkeletonTemplateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainPage ],
+      declarations: [ SkeletonTemplateComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MainPage);
+    fixture = TestBed.createComponent(SkeletonTemplateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

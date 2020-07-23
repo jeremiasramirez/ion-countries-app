@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { SettingPageRoutingModule } from './setting-routing.module';
-
+import { ToolbarComponent } from "../../components/toolbar/toolbar.component";
 import { SettingPage } from './setting.page';
 
 @NgModule({
@@ -15,6 +15,6 @@ import { SettingPage } from './setting.page';
     IonicModule,
     SettingPageRoutingModule
   ],
-  declarations: [SettingPage]
+  declarations: [SettingPage,ToolbarComponent]
 })
 export class SettingPageModule {}
