@@ -1,31 +1,16 @@
+
 <ion-header class="ion-no-border">
-  <ion-toolbar color="tertiary">
-   
-    <ion-buttons slot="start">
-      <ion-icon slot="icon-only" name="search"></ion-icon> 
-    </ion-buttons>
 
-    <ion-title>Search</ion-title>
-
-    <ion-buttons slot="end">
-      <ion-spinner *ngIf="spinner.on" color="light" name="crescent"></ion-spinner>
-    </ion-buttons>
-    
-  </ion-toolbar>
-
+  <app-toolbar title="Search" iconName="search" [spinner]="spinner"></app-toolbar>
   <ion-searchbar (keyup)="searchBar()" [(ngModel)]="keys" color="light"></ion-searchbar>
+
 </ion-header>
 
 
 <ion-content>
 
   <ion-list>
-
- 
-      <app-each-item [data]="searched" [key]="keys"></app-each-item>
-     
-   
-
+    <app-each-item [data]="searched" [key]="keys"></app-each-item>
   </ion-list>
 
 </ion-content>

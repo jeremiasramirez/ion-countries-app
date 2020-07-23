@@ -8,6 +8,7 @@ import { SearchPageRoutingModule } from './search-routing.module';
 import  { PipeSearch } from "../../pipes/search.pipe"
 import { SearchPage } from './search.page';
 import {  EachItemComponent } from "../../components/each-item/each-item.component"
+import { ToolbarComponent } from "../../components/toolbar/toolbar.component";
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +16,10 @@ import {  EachItemComponent } from "../../components/each-item/each-item.compone
     IonicModule,
     SearchPageRoutingModule
   ],
-  declarations: [SearchPage,PipeSearch, EachItemComponent]
+  declarations: [
+    SearchPage,
+    PipeSearch,
+    EachItemComponent,
+    ToolbarComponent]
 })
 export class SearchPageModule {}
