@@ -6,8 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { AllPageRoutingModule } from './all-routing.module';
 
-import { AllPage } from './all.page';
-
+import { AllPage } from './all.page'; 
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +14,8 @@ import { AllPage } from './all.page';
     IonicModule,
     AllPageRoutingModule
   ],
-  declarations: [AllPage]
+  declarations: [
+    AllPage
+  ]
 })
 export class AllPageModule {}

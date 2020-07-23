@@ -9,6 +9,7 @@ export class ToolbarComponent implements OnInit {
   @Input() title:string;
   @Input() spinner;
   @Input() iconName:string;
+ 
   constructor() { }
 
   ngOnInit() {}

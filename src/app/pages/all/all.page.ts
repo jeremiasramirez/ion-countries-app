@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import  { CountryService , typeResponse} from "../../services/country.service"
 import  { FeatureService } from "../../services/feature.service"
-import { timer } from 'rxjs';
+import { timer,interval } from 'rxjs';
 import { delay } from 'rxjs/operators';
  
 
@@ -21,6 +21,7 @@ export class AllPage   {
   public startData:number = 0;
   public endData: number = 10;
   public spinner = { on:true}
+  
   public noConnected : boolean = false;
    
 
@@ -35,7 +36,7 @@ export class AllPage   {
   public refresh(){
      
     this.ALL_DATA.splice(0, 0, null)
-    this.spinner.on=true;
+    this.spinner.on=true; 
     this.getAllData();
 
   } 
@@ -48,7 +49,7 @@ export class AllPage   {
     ()=>{return},
     ()=>{
       this.spinner.on=false
-      this.noConnected = true
+      this.noConnected = true 
     })
 
     this.verifiedToast();
@@ -61,7 +62,7 @@ export class AllPage   {
       if (this.noConnected == false){
         this.activeToast();
       }
-
+   
     })
   }
 

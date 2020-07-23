@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ExplorePageRoutingModule } from './explore-routing.module';
-
+import { ToolbarComponent } from "../../components/toolbar/toolbar.component";
 import { ExplorePage } from './explore.page';
 
 @NgModule({
@@ -15,6 +15,9 @@ import { ExplorePage } from './explore.page';
     IonicModule,
     ExplorePageRoutingModule
   ],
-  declarations: [ExplorePage]
+  declarations: [
+    ExplorePage,
+    ToolbarComponent
+  ]
 })
 export class ExplorePageModule {}
