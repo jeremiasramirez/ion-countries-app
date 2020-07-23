@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { SearchPageRoutingModule } from './search-routing.module';
-
+import  { PipeSearch } from "../../pipes/search.pipe"
 import { SearchPage } from './search.page';
 
 @NgModule({
@@ -15,6 +15,6 @@ import { SearchPage } from './search.page';
     IonicModule,
     SearchPageRoutingModule
   ],
-  declarations: [SearchPage]
+  declarations: [SearchPage,PipeSearch]
 })
 export class SearchPageModule {}

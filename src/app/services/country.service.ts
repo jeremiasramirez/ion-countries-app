@@ -15,14 +15,12 @@ export class CountryService {
        
     }
 
-    ngOnInit(){
-        
-    }
+  
 
     public getall(){
         
         return ajax.get(this.ALL_URL).pipe(
-            delay(350), 
+            delay(1000), 
             pluck('response')
         )
 
