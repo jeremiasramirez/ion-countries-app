@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { ToastController, ModalController } from '@ionic/angular';
 import  { CountryService , typeResponse} from "../../services/country.service"
 import  { FeatureService } from "../../services/feature.service"
 import { timer,interval } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { CountryComponent } from 'src/app/components/country/country.component';
  
 
 @Component({
@@ -25,12 +26,23 @@ export class AllPage   {
   public noConnected : boolean = false;
    
 
-  constructor(public toasts:ToastController, public darkService: FeatureService,public countryService: CountryService) {
+  constructor(public modals:ModalController,public toasts:ToastController, public darkService: FeatureService,public countryService: CountryService) {
     if(!localStorage.getItem("themes")) localStorage.setItem("themes", "tertiary")
      
       this.getAllData();
 
      
+  }
+
+  public async showCountry(data){
+ 
+    const modal = await this.modals.create({
+      component: CountryComponent,
+      componentProps: {data:data}
+    })
+    await modal.present()
+   
+   
   }
  
   public refresh(){

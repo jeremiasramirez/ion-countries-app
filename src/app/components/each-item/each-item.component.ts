@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class EachItemComponent implements OnInit {
   @Input() data;
   @Input() key;
+  @Input() startData;
+  @Input() endData;
   constructor() { }
 
   ngOnInit() {}

@@ -23,9 +23,7 @@
   
  
   <ion-list *ngIf="!spinner.on" >
-    
-   
-    <ion-item   class="slow" *ngFor="let item of ALL_DATA | slice:startData:endData" detail>
+     <ion-item class="slow"  *ngFor="let item of ALL_DATA | slice:startData:endData" (click)="showCountry(item)" detail >
      
       <ion-thumbnail slot="start">
         <ion-img [src]="item.flag"></ion-img>
