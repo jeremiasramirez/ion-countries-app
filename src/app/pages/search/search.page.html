@@ -1,12 +1,15 @@
  
 <ion-header  class="ion-no-border">
-  <br>
+
    <ion-toolbar>
-     <ion-searchbar mode="ios" class="ups" (keyup)="searchBar()" [(ngModel)]="keys"></ion-searchbar>
+     <ion-title>Search</ion-title>
    </ion-toolbar>
 
  </ion-header>
-  
+ 
+ <ion-toolbar>
+  <ion-searchbar mode="ios" class="ups" (keyup)="searchBar()" [(ngModel)]="keys"></ion-searchbar>
+</ion-toolbar>
  <ion-content>
  
  
