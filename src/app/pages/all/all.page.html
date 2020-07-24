@@ -2,14 +2,13 @@
   <ion-toolbar color="tertiary">
 
     <ion-buttons slot="start">
-      <ion-icon slot="icon-only" name="flag"></ion-icon> 
+      <ion-icon slot="icon-only" name="filter-outline"></ion-icon>
     </ion-buttons>
 
     <ion-title>All</ion-title>
 
     <ion-buttons slot="end">
-      <ion-spinner *ngIf="spinner.on" color="light" name="crescent"></ion-spinner>
-      <ion-icon (click)="refresh()" slot="icon-only" *ngIf="!spinner.on" mode="ios" name="sync-outline"></ion-icon>
+      <ion-spinner *ngIf="spinner.on" name="crescent"></ion-spinner>
     </ion-buttons>
 
   </ion-toolbar>
@@ -37,9 +36,22 @@
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/home/search" color="tertiary">
-      <ion-icon name="search"></ion-icon>
+
+    <ion-fab-button  color="tertiary">
+      <ion-icon name="arrow-up" mode="ios"></ion-icon>
     </ion-fab-button>
+
+    <ion-fab-list side="top" >
+
+      <ion-fab-button  color="tertiary" routerLink="/home/search">
+        <ion-icon name="search"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button color="tertiary" (click)="refresh()">
+        <ion-icon mode="ios" name="sync-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+
   </ion-fab>
 
   <ion-infinite-scroll  treshold="1px" (ionInfinite)="changeMore($event)">

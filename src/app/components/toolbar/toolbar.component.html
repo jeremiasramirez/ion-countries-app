@@ -1,4 +1,5 @@
-<ion-toolbar color="tertiary">
+
+ <ion-toolbar color="tertiary">
    
   <ion-buttons slot="start">
     <ion-icon slot="icon-only" [name]="iconName"></ion-icon> 
@@ -7,10 +8,9 @@
   <ion-title>{{title}}</ion-title>
 
   <ion-buttons slot="end">
-    <ion-spinner *ngIf="spinner.on" color="light" name="crescent"></ion-spinner>
+    <ion-spinner *ngIf="spinner.on" name="crescent"></ion-spinner>
     
   </ion-buttons>
   
 </ion-toolbar>
-
  

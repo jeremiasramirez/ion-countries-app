@@ -1,10 +1,11 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="danger"> 
-    <ion-title>{{ data.cioc }}</ion-title>
+    <ion-title>{{ data.name }}</ion-title>
  
     <ion-buttons slot="end">
       <ion-icon  name="close" slot="icon-only" (click)="closeModal()"></ion-icon> 
     </ion-buttons>
+
   </ion-toolbar>
 
 </ion-header>
@@ -25,7 +26,7 @@
 
  
   </ion-card>
-  <ion-list>
+  <ion-list mode="ios">
     <ion-list-header>
       <h4>Capital</h4>
     </ion-list-header>
@@ -96,6 +97,20 @@
 
 
   <ion-list-header>
+    <h4>Bloque regional</h4>
+  </ion-list-header>
+
+  <ion-item>
+    <ion-icon color="danger" slot="start" name="radio-button-off-outline" mode="ios"></ion-icon>
+    <ion-label>{{ data.regionalBlocs[0].acronym }} </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-icon color="danger" slot="start" name="radio-button-off-outline" mode="ios"></ion-icon>
+    <p>{{ data.regionalBlocs[0].name }} </p>
+  </ion-item>
+
+
+  <ion-list-header>
     <h4>Tiempo de zonas</h4>
   </ion-list-header>
 
@@ -110,7 +125,7 @@
 
   <ion-item>
     <ion-icon color="danger" slot="start" name="radio-button-off-outline" mode="ios"></ion-icon>
-    <ion-label>{{ data.callingCodes[0] }}</ion-label>
+    <ion-label>+{{ data.callingCodes[0] }} </ion-label>
   </ion-item>
 
 </ion-list>

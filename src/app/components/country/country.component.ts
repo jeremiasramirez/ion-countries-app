@@ -10,7 +10,7 @@ import { timer } from 'rxjs';
 })
 export class CountryComponent   {
   @Input() data : typeResponse;
-  public spinner ={
+  public spinner2 ={
     on:true
   }
   constructor(public modal:ModalController) {
@@ -18,7 +18,7 @@ export class CountryComponent   {
   }
 
   public timingSpinner(){
-    timer(800).subscribe(()=>{ this.spinner.on=false});
+    timer(800).subscribe(()=>{ this.spinner2.on=false});
   }
   public closeModal(){
     this.modal.dismiss()
