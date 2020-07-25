@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="danger"> 
+    <ion-title>{{ data }}</ion-title>
+ 
+    <ion-buttons slot="end">
+      <ion-icon  name="close" *ngIf="!spinner.on" slot="icon-only" (click)="closeModal()"></ion-icon> 
+      <ion-spinner name="crescent" *ngIf="spinner.on"></ion-spinner>
+    </ion-buttons>
+
+    
+  </ion-toolbar>
+
+</ion-header>
+ 
+ 
+<ion-content  >
+  <ion-list *ngIf="spinner.on">
+    <ion-item   class="ups" *ngFor="let item of [1,1,1,1,1,1,1] ">
+     
+      <ion-thumbnail slot="start">
+        <ion-skeleton-text style="width: 95%"></ion-skeleton-text>
+      </ion-thumbnail>
+      
+      <ion-label>  
+        <ion-skeleton-text style="width: 80%"></ion-skeleton-text>
+        <ion-skeleton-text style="width: 40%"></ion-skeleton-text>  
+      </ion-label>
+        
+  
+    </ion-item> 
+  
+  </ion-list>
+  <ion-item class="ups" *ngFor="let item of continents|slice:startData:endData" (click)="showCountry(item)" detail>
+  
+    <ion-thumbnail slot="start">
+      <ion-img [src]="item.flag"></ion-img> 
+    </ion-thumbnail> 
+
+    <ion-label>{{item.name}}</ion-label> 
+  </ion-item>
+
+  <ion-infinite-scroll  treshold="1px" (ionInfinite)="changeMore($event)">
+    <ion-infinite-scroll-content  loadingSpinner="crescent"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

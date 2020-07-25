@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ExplorePageRoutingModule } from './explore-routing.module';
 import { ToolbarComponent } from "../../components/toolbar/toolbar.component";
 import { ExplorePage } from './explore.page';
-
+import { ContinentComponent }from "../../components/continent/continent.component"
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +17,8 @@ import { ExplorePage } from './explore.page';
   ],
   declarations: [
     ExplorePage,
-    ToolbarComponent
+    ToolbarComponent,
+    ContinentComponent
   ]
 })
 export class ExplorePageModule {}

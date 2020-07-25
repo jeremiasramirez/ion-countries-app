@@ -8,10 +8,14 @@ import { delay, pluck  } from "rxjs/operators";
 export class CountryService {
 
     public ALL_URL : string;
+    public CONTINENT: string;
 
     constructor(){
 
         this.ALL_URL = "https://restcountries.eu/rest/v2/all";
+        this.CONTINENT = "https://restcountries.eu/rest/v2/region/"
+       
+
        
     }
 
@@ -20,10 +24,18 @@ export class CountryService {
     public getall(){
         
         return ajax.get(this.ALL_URL).pipe(
-            delay(1000), 
+            delay(500), 
             pluck('response')
         )
 
+    }
+
+    getToContinent(param:string){
+        let urls = this.CONTINENT+param;
+        return ajax.get(urls).pipe(
+            delay(100),
+            pluck('response')
+        )
     }
 
 
