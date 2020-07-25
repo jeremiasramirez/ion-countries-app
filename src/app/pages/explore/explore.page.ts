@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FeatureService }from "../../services/feature.service"
+import { Component } from '@angular/core';
+import { FeatureService, continents, regions }from "../../services/feature.service"
+import { from } from 'rxjs';
+import { timer } from 'rxjs'
 @Component({
   selector: 'app-explore',
   templateUrl: './explore.page.html',
@@ -9,10 +11,18 @@ import { FeatureService }from "../../services/feature.service"
   ]
 })
 export class ExplorePage   {
-
+  public spinner ={on:true}
+  public continent;
+  public obsContinent$ = from(continents)
   
-  constructor(public theme:FeatureService) { 
+  constructor(public feature:FeatureService) { 
     
+    timer(800).
+      subscribe(
+        ( ) =>{ this.continent = continents},
+        ()=>{return},
+        ()=>{this.spinner.on=false})
+ 
   }
 
    

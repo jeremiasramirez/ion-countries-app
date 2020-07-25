@@ -28,6 +28,14 @@ const routes: Routes = [
     path: 'setting',
     loadChildren: () => import('./pages/setting/setting.module').then( m => m.SettingPageModule)
   },
+  {
+    path: 'continent',
+    loadChildren: () => import('./pages/continent/continent.module').then( m => m.ContinentPageModule)
+  },
+  {
+    path: 'region',
+    loadChildren: () => import('./pages/region/region.module').then( m => m.RegionPageModule)
+  },
 ];
 
 @NgModule({
