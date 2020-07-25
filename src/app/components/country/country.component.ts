@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { typeResponse } from '../../services/country.service';
 import { ModalController } from '@ionic/angular';
 import { timer } from 'rxjs';
@@ -9,7 +9,8 @@ import { timer } from 'rxjs';
   styleUrls: ['./country.component.scss'],
 })
 export class CountryComponent   {
-  @Input() data : typeResponse;
+  @Input() data :typeResponse[];
+
   public spinner2 ={
     on:true
   }
@@ -23,8 +24,7 @@ export class CountryComponent   {
   public closeModal(){
     this.modal.dismiss()
   }
-  ngOnInit(){
-    console.log(this.data)
-  }
+  
+ 
 
 }

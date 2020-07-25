@@ -73,7 +73,7 @@
 
   <ion-item>
     <ion-icon color="danger" slot="start" name="radio-button-off-outline" mode="ios"></ion-icon>
-    <ion-label>{{ data.currencies[0].code }}</ion-label>
+    <ion-label *ngIf="data.currencies[0].code">{{ data.currencies[0].code }}</ion-label> 
   </ion-item>
 
   <ion-item>

@@ -49,7 +49,7 @@ export class AllPage   {
      
     this.ALL_DATA.splice(0, 0, null)
     this.spinner.on=true; 
-    timer(300).subscribe(()=>this.getAllData())
+      this.getAllData() 
 
   } 
 
