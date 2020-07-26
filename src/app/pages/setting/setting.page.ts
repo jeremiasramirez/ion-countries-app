@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ActionSheetController, ToastController, AlertController, ModalController } from '@ionic/angular';
 import { timer } from 'rxjs';
 import { ReportComponent } from 'src/app/components/report/report.component';
+import { AboutPhoneComponent } from 'src/app/components/about-phone/about-phone.component';
 
 @Component({
   selector: 'app-setting',
@@ -17,7 +18,8 @@ export class SettingPage  {
       public alert:AlertController,
       public toasts: ToastController,public router:Router,
       public actionSheet:ActionSheetController,
-      public modalReport:ModalController) {
+      public modalReport:ModalController,
+      public modalAbout:ModalController) {
 
     this.verifiedStatusTheme();
   }
@@ -103,5 +105,17 @@ export class SettingPage  {
     await report.present()
 
   }
+
+  public async aboutPhone(){
+
+    const aboutPh = await this.modalAbout.create({
+      component: AboutPhoneComponent
+    })
+    
+    await aboutPh.present()
+
+  }
+
+
 }
  
