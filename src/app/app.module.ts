@@ -7,11 +7,9 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { CountryComponent} from "./components/country/country.component" 
-import { SkeletonTemplateComponent} from "./components/skeleton-template/skeleton-template.component"
+import { AppRoutingModule } from './app-routing.module'; 
 @NgModule({
-  declarations: [AppComponent, CountryComponent,SkeletonTemplateComponent],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [

@@ -1,12 +1,15 @@
  
 <ion-header  class="ion-no-border">
 
-   <ion-toolbar>
+   <ion-toolbar  color="tertiary">
+     <ion-buttons slot="start">
+       <ion-icon slot="icon-only" name="search"></ion-icon>
+     </ion-buttons>
      <ion-title>Search</ion-title>
    </ion-toolbar>
 
  </ion-header>
- 
+ <br>
  <ion-toolbar>
   <ion-searchbar mode="ios" class="ups" (keyup)="searchBar()" [(ngModel)]="keys"></ion-searchbar>
 </ion-toolbar>

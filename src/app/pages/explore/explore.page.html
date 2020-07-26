@@ -5,7 +5,7 @@
 </ion-header>
  
 <ion-content>
- 
+ <app-skeleton-template [spinner]="spinner"></app-skeleton-template>
  <ion-list>
 
   <ion-item class="ups"*ngFor="let continent_ of continent" detail (click)="opentToContinent(continent_.name)">

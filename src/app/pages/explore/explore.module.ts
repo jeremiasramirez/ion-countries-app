@@ -8,6 +8,7 @@ import { ExplorePageRoutingModule } from './explore-routing.module';
 import { ToolbarComponent } from "../../components/toolbar/toolbar.component";
 import { ExplorePage } from './explore.page';
 import { ContinentComponent }from "../../components/continent/continent.component"
+import { SkeletonTemplateComponent } from 'src/app/components/skeleton-template/skeleton-template.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,7 +19,8 @@ import { ContinentComponent }from "../../components/continent/continent.componen
   declarations: [
     ExplorePage,
     ToolbarComponent,
-    ContinentComponent
+    ContinentComponent,
+    SkeletonTemplateComponent
   ]
 })
 export class ExplorePageModule {}
