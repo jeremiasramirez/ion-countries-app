@@ -1,3 +1,46 @@
-<p>
-  report works!
-</p>
+
+<ion-header class="ion-no-border">
+  <ion-toolbar color="tertiary">
+   
+    <ion-buttons slot="start">
+      <ion-icon slot="icon-only" name="chatbubbles-outline"></ion-icon> 
+    </ion-buttons>
+  
+    <ion-title>Report</ion-title>
+  
+    <ion-buttons slot="end">
+      <ion-icon slot="icon-only" name="close" (click)="closeModal()"></ion-icon>  
+    </ion-buttons>
+    
+  </ion-toolbar>
+   
+</ion-header>
+
+<ion-content>
+
+ 
+     
+    <ion-list>
+
+      <ion-list-header >
+        <strong>Email</strong>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-input  placeholder="Your email"></ion-input>
+      </ion-item>
+
+      <ion-list-header>
+        <strong>Comment</strong>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-textarea placeholder="Comment"></ion-textarea>
+      </ion-item>
+      <ion-button color="tertiary"size="small" (click)="sendReport()" expand="full">Send report</ion-button> 
+    </ion-list>
+      
+    
+
+</ion-content>
+ 

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ActionSheetController, ToastController, AlertController } from '@ionic/angular';
+import { ActionSheetController, ToastController, AlertController, ModalController } from '@ionic/angular';
 import { timer } from 'rxjs';
+import { ReportComponent } from 'src/app/components/report/report.component';
 
 @Component({
   selector: 'app-setting',
@@ -15,7 +16,8 @@ export class SettingPage  {
   constructor(
       public alert:AlertController,
       public toasts: ToastController,public router:Router,
-      public actionSheet:ActionSheetController) {
+      public actionSheet:ActionSheetController,
+      public modalReport:ModalController) {
 
     this.verifiedStatusTheme();
   }
@@ -84,12 +86,22 @@ export class SettingPage  {
 
     const alerts = await this.alert.create({
       header: "Version",
-      subHeader: "Released",
+      subHeader: "Release",
       message: this.version,
       backdropDismiss: false,
       buttons:[ {text: 'Ok', handler:()=>alerts.dismiss()}]
     })
     await alerts.present()
+  }
+
+  public async openReport(){
+
+    const report = await this.modalReport.create({
+      component: ReportComponent
+    })
+    
+    await report.present()
+
   }
 }
  
