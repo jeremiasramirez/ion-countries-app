@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ToastController, ModalController } from '@ionic/angular';
 import  { CountryService , typeResponse} from "../../services/country.service"
 import  { FeatureService } from "../../services/feature.service"
-import { timer,interval } from 'rxjs';
+import { timer } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { CountryComponent } from 'src/app/components/country/country.component';
  
@@ -101,6 +101,7 @@ export class AllPage   {
       e.target.complete()
     })
   }
+ 
 
   
 }

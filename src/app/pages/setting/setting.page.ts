@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ActionSheetController, ToastController } from '@ionic/angular';
+import { ActionSheetController, ToastController, AlertController } from '@ionic/angular';
 import { timer } from 'rxjs';
 
 @Component({
@@ -10,9 +10,12 @@ import { timer } from 'rxjs';
 })
 export class SettingPage  {
   public checkedTheme: boolean = false;
+  public version:string = "1.0.0";
 
-
-  constructor(public toasts: ToastController,public router:Router, public actionSheet:ActionSheetController) {
+  constructor(
+      public alert:AlertController,
+      public toasts: ToastController,public router:Router,
+      public actionSheet:ActionSheetController) {
 
     this.verifiedStatusTheme();
   }
@@ -75,6 +78,18 @@ export class SettingPage  {
     await sheet.present()
     
 
+  }
+
+  public async openVersion(){
+
+    const alerts = await this.alert.create({
+      header: "Version",
+      subHeader: "Released",
+      message: this.version,
+      backdropDismiss: false,
+      buttons:[ {text: 'Ok', handler:()=>alerts.dismiss()}]
+    })
+    await alerts.present()
   }
 }
  

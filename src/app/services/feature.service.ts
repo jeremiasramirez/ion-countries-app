@@ -1,21 +1,14 @@
 import {  Injectable } from "@angular/core"
  
- 
-
 @Injectable()
 
-export class FeatureService {
-  
+export class FeatureService {}
+
+interface regionInterface { name:string;  subname:string; }
+interface continentInterface {  name:string;  }
+
+export const regions:regionInterface[] = [
    
-   constructor(){ 
-        
-    
-
-   } 
-
-    
-}
-export const regions:{name:string,subname:string}[] = [
    {name: "EU", subname: "(European Union)"},
    {name: "EFTA", subname: "(European Free Trade Association)"},
    {name: "CARICOM", subname: "(Caribbean Community)"},
@@ -31,7 +24,8 @@ export const regions:{name:string,subname:string}[] = [
    {name: "SAARC", subname: "(South Asian Association for Regional Cooperation)"},
     
 ]
-export const continents: {name:string}[] = [
+export const continents: continentInterface[] = [
+  
    {name: "Americas"},
    {name: "Africa" },
    {name: "Americas"},

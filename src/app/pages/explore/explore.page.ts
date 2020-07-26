@@ -19,7 +19,7 @@ export class ExplorePage   {
   public obsContinent$ = from(continents)
   
   constructor(public modal:ModalController, public router:Router, public feature:FeatureService) { 
-    
+ 
     this.showToExplore();
    
  
