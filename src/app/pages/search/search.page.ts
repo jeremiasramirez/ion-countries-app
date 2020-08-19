@@ -9,7 +9,8 @@ import { timer } from 'rxjs';
   templateUrl: './search.page.html',
   styleUrls: ['./search.page.scss'],
   providers:[ 
-    FeatureService ,CountryService
+    FeatureService ,
+    CountryService
   ]
 })
 export class SearchPage  {
