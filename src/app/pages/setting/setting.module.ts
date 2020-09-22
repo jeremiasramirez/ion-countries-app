@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { SettingPageRoutingModule } from './setting-routing.module';
-import { ToolbarComponent } from "../../components/toolbar/toolbar.component";
 import { SettingPage } from './setting.page';
+import { ComponentModule } from 'src/app/components/component.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentModule,
     SettingPageRoutingModule
   ],
-  declarations: [SettingPage,ToolbarComponent]
+  declarations: [
+    SettingPage
+  ]
 })
 export class SettingPageModule {}

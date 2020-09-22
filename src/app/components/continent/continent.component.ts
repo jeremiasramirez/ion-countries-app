@@ -15,20 +15,21 @@ import { timer } from 'rxjs';
 })
 export class ContinentComponent implements OnInit {
   @Input() data;
-  public endData:number =10;
-  public startData:number=0;
-  public continents : typeResponse[];
-  public spinner = {on:true}
+  private endData:number =10;
+ 
+  private continents : typeResponse[];
+  private spinner = {on:true}
 
-
-
-  constructor(public modal2:ModalController,public modal:ModalController,public httpS:CountryService) { }
+  constructor(
+    private modal2:ModalController,
+    private modal:ModalController,
+    private httpS:CountryService) { }
 
   ngOnInit() { 
     this.getContinent()
   }
 
-  public getContinent(){
+  private getContinent(){
     
     this.httpS.getToContinent(this.data).subscribe(
       (resp)=>{this.continents = resp;},
@@ -37,7 +38,7 @@ export class ContinentComponent implements OnInit {
 
   }
 
-  async showCountry(item){
+  async showCountry(item:typeResponse){
     const modalToCountry = await this.modal2.create({
       component: CountryComponent,
       componentProps: {data:item}
@@ -50,13 +51,12 @@ export class ContinentComponent implements OnInit {
     this.modal.dismiss()
   }
 
-
-  public changeMore(e:any){
+  private changeMore(e:any){
     
-    timer(500).subscribe(()=>{
-        
+    timer(500).subscribe(()=>{    
         this.endData += 10;
-     
+        e.target.complete()
     })
+
   }
 }

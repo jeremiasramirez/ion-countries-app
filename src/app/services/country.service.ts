@@ -19,7 +19,7 @@ export class CountryService {
        
     }
 
-  
+
 
     public getall(){
         
@@ -31,7 +31,7 @@ export class CountryService {
     }
 
     getToContinent(param:string){
-        let urls = this.CONTINENT+param;
+        let urls = this.CONTINENT+param.toLowerCase();
         return ajax.get(urls).pipe(
             delay(100),
             pluck('response')

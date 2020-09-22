@@ -1,23 +1,20 @@
-
-<ion-header class="ion-no-border">
+<ion-header class="ion-no-border"> 
   <app-toolbar title="Explore" iconName="logo-buffer" [spinner]="spinner"></app-toolbar>
- 
 </ion-header>
  
 <ion-content>
  <app-skeleton-template [spinner]="spinner"></app-skeleton-template>
+
  <ion-list>
-
   <ion-item class="ups"*ngFor="let continent_ of continent" detail (click)="opentToContinent(continent_.name)">
-
     <ion-icon slot="start" name="ellipse-outline"></ion-icon>
+
      <ion-label>
         {{ continent_.name }}
         <p>Continent</p>
      </ion-label>
 
   </ion-item>
-
  </ion-list>
 
 </ion-content>

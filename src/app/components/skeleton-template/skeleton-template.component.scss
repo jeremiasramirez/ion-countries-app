@@ -1,0 +1,13 @@
+.skeleton{
+    animation: ske 2s infinite ease-out;
+    transition: 1s;
+    border-radius:6px;
+}
+@keyframes ske{
+    from{
+        opacity: .4;
+    }
+    to{
+        opacity: 1;
+    }
+}

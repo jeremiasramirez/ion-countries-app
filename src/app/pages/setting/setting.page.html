@@ -1,11 +1,15 @@
 <ion-header class="ion-no-border">
-  <app-toolbar title="Settings" iconName="settings" spinner="null"></app-toolbar>
+  <app-toolbar title="Settings" iconName="null" spinner="null"></app-toolbar>
 </ion-header>
 
 <ion-content>
  
+  <article style="height: 120px; text-align: center; ">
+    <ion-img style="height: 100px;" src="../../../assets/settings.svg"></ion-img>
+  </article>
+
 <ion-list mode="ios" class="ups">
- 
+
 
   <ion-item>
     <ion-icon slot="start" name="color-fill"></ion-icon>
@@ -51,7 +55,7 @@
   <ion-item (click)="openVersion()" detail> 
     <ion-icon slot="start" name="git-commit-outline"></ion-icon>
     <ion-label>App version 
-      <p>1.0.0</p>
+      <p>{{version}}</p>
     </ion-label>
   </ion-item>
   

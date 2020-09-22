@@ -1,0 +1,17 @@
+<ion-slides  [options]="slideOpts" *ngIf="!showBorders" pager="true" styles="heigth: 100px;">
+  <ion-slide *ngFor="let front of frontiers">
+
+    <ion-card style="min-height: 230px;width: 100%;">
+     
+     <ion-card-header>
+       <ion-card-title>{{front.name}}</ion-card-title>
+     </ion-card-header>
+
+       <ion-card-content>
+         <ion-img [src]="front.flag"></ion-img>
+       </ion-card-content>
+
+    </ion-card>
+
+  </ion-slide>
+</ion-slides>

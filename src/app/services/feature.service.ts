@@ -26,10 +26,10 @@ export const regions:regionInterface[] = [
 ]
 export const continents: continentInterface[] = [
   
-   {  name: "Américas"  },
-   {  name: "África"    }, 
+   {  name: "Americas"  },
+   {  name: "Africa"    }, 
    {  name: "Asia"      },
    {  name: "Europe"    },
-   {  name: "Oceanía"   }
+   {  name: "Oceania"   }
  
 ]

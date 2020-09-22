@@ -4,23 +4,21 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ExplorePageRoutingModule } from './explore-routing.module';
-import { ToolbarComponent } from "../../components/toolbar/toolbar.component";
-import { ExplorePage } from './explore.page';
-import { ContinentComponent }from "../../components/continent/continent.component"
-import { SkeletonTemplateComponent } from 'src/app/components/skeleton-template/skeleton-template.component';
+import { ExplorePageRoutingModule } from './explore-routing.module'; 
+import { ExplorePage } from './explore.page'; 
+import { ComponentModule } from 'src/app/components/component.module';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ExplorePageRoutingModule
+    ExplorePageRoutingModule,
+    ComponentModule
   ],
   declarations: [
-    ExplorePage,
-    ToolbarComponent,
-    ContinentComponent,
-    SkeletonTemplateComponent
+    ExplorePage
   ]
 })
 export class ExplorePageModule {}

@@ -11,20 +11,21 @@ import { AboutPhoneComponent } from 'src/app/components/about-phone/about-phone.
   styleUrls: ['./setting.page.scss'],
 })
 export class SettingPage  {
-  public checkedTheme: boolean = false;
-  public version:string = "1.0.0";
+  private checkedTheme: boolean = false;
+  private version:string = "2.0.0";
 
   constructor(
-      public alert:AlertController,
-      public toasts: ToastController,public router:Router,
-      public actionSheet:ActionSheetController,
-      public modalReport:ModalController,
-      public modalAbout:ModalController) {
+      private alert:AlertController,
+      private toasts: ToastController,
+      private router:Router,
+      private actionSheet:ActionSheetController,
+      private modalReport:ModalController,
+      private modalAbout:ModalController) {
 
     this.verifiedStatusTheme();
   }
 
-  public async msjToast(){
+  private async msjToast(){
     const toast = await this.toasts.create({
       message: "Caché delete",
       duration: 3000,

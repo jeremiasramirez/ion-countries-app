@@ -7,17 +7,19 @@ import { IonicModule } from '@ionic/angular';
 import { AllPageRoutingModule } from './all-routing.module';
 import { SkeletonTemplateComponent} from '../../components/skeleton-template/skeleton-template.component'
 import { AllPage } from './all.page'; 
+import { ComponentModule } from 'src/app/components/component.module';
  
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AllPageRoutingModule
+    AllPageRoutingModule,
+    ComponentModule
   ],
   declarations: [
-    AllPage,
-    SkeletonTemplateComponent 
+    AllPage
+     
   ]
 })
 export class AllPageModule {}

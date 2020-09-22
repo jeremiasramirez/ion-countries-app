@@ -1,54 +1,56 @@
+<ion-content >
+
+    <ion-slides pager="true" style="height:100%" *ngIf="showSlide">
  
-<ion-content>
-    <ion-tabs  >
-      <ion-tab-bar color="tertiary" slot="bottom">
+      <ion-slide *ngFor="let slide of slidesPhoto; let index=index">
+           
+          <div style="margin-top: -10px">
+
+              <ion-img [src]="slide.img"></ion-img>
+             
+              <div style="margin: 1em 0"> <h4> {{slide.title}} </h4>  </div>
+
+              <section *ngIf="index==2">
+                <br><br><br>
+
+                <ion-button  (click)="redirect()" expand="block"  mode="ios">Start
+                  <ion-ripple-effect></ion-ripple-effect>
+                </ion-button>
+
+               </section>
+         </div>   
+       
+      </ion-slide>
+
+  </ion-slides>
+
+    <ion-tabs  *ngIf="!showSlide">
+      <ion-tab-bar slot="bottom">
   
         <ion-tab-button tab="explore">
-          <ion-icon name="globe"></ion-icon>  
+          <ion-icon name="globe-outline"></ion-icon>  
           <ion-label>Explore</ion-label>
         </ion-tab-button>
   
         <ion-tab-button tab="all">
-          <ion-icon   name="filter-outline"></ion-icon>
+          <ion-icon name="filter-outline"></ion-icon>
           <ion-label>All</ion-label>
         </ion-tab-button>
   
         <ion-tab-button tab="search">
-          <ion-icon name="search"></ion-icon>  
+          <ion-icon name="search-outline"></ion-icon>  
           <ion-label>Search</ion-label>
         </ion-tab-button>
   
         <ion-tab-button tab="setting">
-          <ion-icon name="settings"></ion-icon>
+          <ion-icon name="settings-outline"></ion-icon>
           <ion-label>Setting</ion-label>
         </ion-tab-button>
        
       </ion-tab-bar>
     </ion-tabs>
+
   </ion-content>
   
-
-<!--
-<ion-content *ngIf="activeSlide">
-
-    <ion-slides pager="true" style="height:100%">
-
-
-        <ion-slide *ngFor="let slide of slidesPhoto; let index=index">
-             
-            <div style="margin-top: -10px">
-
-                <ion-img [src]="slide.img"></ion-img>
-               
-                <div style="margin: 1em 0">
-                    <h4 >{{slide.title}}</h4>
-                </div>
-
-                <ion-button (click)="redirectToHome()" size="small" color="tertiary" expand="full" *ngIf="index==1">Start</ion-button>
-           </div>   
-        </ion-slide>
-  
-
-    </ion-slides>
-
-</ion-content>-->
+ 
+ 

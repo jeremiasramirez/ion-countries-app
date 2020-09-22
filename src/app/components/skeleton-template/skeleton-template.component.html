@@ -1,13 +1,13 @@
 <ion-list *ngIf="spinner.on">
   <ion-item   class="ups" *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1,1] ">
    
-    <ion-thumbnail slot="start">
+    <ion-thumbnail class="skeleton" slot="start">
       <ion-skeleton-text style="width: 95%"></ion-skeleton-text>
     </ion-thumbnail>
     
-    <ion-label>  
-      <ion-skeleton-text style="width: 80%"></ion-skeleton-text>
-      <ion-skeleton-text style="width: 40%"></ion-skeleton-text>  
+    <ion-label >  
+      <ion-skeleton-text class="skeleton"  style="width: 80%"></ion-skeleton-text>
+      <ion-skeleton-text class="skeleton" style="width: 40%"></ion-skeleton-text>  
     </ion-label>
       
 

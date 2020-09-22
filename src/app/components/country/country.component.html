@@ -1,9 +1,11 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="danger"> 
+  <ion-toolbar  mode="ios"> 
     <ion-title>{{ data.name }}</ion-title>
  
     <ion-buttons slot="end">
-      <ion-icon  name="close" slot="icon-only" (click)="closeModal()"></ion-icon> 
+      <ion-button mode="md" (click)="closeModal()">
+        <ion-icon name="close" slot="icon-only"></ion-icon> 
+      </ion-button>
     </ion-buttons>
 
   </ion-toolbar>
@@ -12,6 +14,7 @@
 
  
 <ion-content>
+ 
 
  
 
@@ -20,6 +23,7 @@
         <ion-card-title>{{data.name}}</ion-card-title>
         <ion-card-subtitle>{{data.cioc}}</ion-card-subtitle>
     </ion-card-header>
+    
     <ion-card-content>
       <ion-img [src]="data.flag"> </ion-img>
     </ion-card-content>
@@ -128,6 +132,12 @@
     <ion-label>+{{ data.callingCodes[0] }} </ion-label>
   </ion-item>
 
+  <ion-list-header>
+    <h4>Borders</h4>
+  </ion-list-header>
+
 </ion-list>
+ 
+<app-borders [showBorders]="showBorders" [frontiers]="frontiers"></app-borders>
 
 </ion-content>

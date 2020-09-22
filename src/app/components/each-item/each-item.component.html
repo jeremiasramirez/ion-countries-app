@@ -1,5 +1,5 @@
  
-<ion-item class="slow" *ngFor="let item of data | search:key|slice:0:10" (click)="showCountry(item)" detail>
+<ion-item class="slow" *ngFor="let item of data | search:key" (click)="showCountry(item)" detail>
  
   <ion-thumbnail slot="start">
     <ion-img [src]="item.flag"></ion-img> 

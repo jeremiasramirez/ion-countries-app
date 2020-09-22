@@ -1,31 +1,13 @@
+  <br>
+  <ion-toolbar>
+    <ion-searchbar  mode="ios" class="ups" (keyup)="searchBar()" [(ngModel)]="keys"></ion-searchbar>
+  </ion-toolbar>
  
-<ion-header  class="ion-no-border">
-
-   <ion-toolbar  color="tertiary">
-     <ion-buttons slot="start">
-       <ion-icon slot="icon-only" name="search"></ion-icon>
-     </ion-buttons>
-     <ion-title>Search</ion-title>
-   </ion-toolbar>
-
- </ion-header>
- <br>
- <ion-toolbar>
-  <ion-searchbar mode="ios" class="ups" (keyup)="searchBar()" [(ngModel)]="keys"></ion-searchbar>
-</ion-toolbar>
  <ion-content>
  
- 
-   <ion-list *ngIf="keys.length >= 3">
- 
-     <app-each-item [data]="searched" [key]="keys"></app-each-item>
-   </ion-list>
- 
- </ion-content>
+   <app-each-item [data]="searched" [key]="keys"></app-each-item>
 
- <ion-content style="text-align: center;">
-  
+ <article style="text-align: center;">
     <ion-spinner *ngIf="spinner.on" name="crescent"></ion-spinner>
-   
- </ion-content>
- 
+ </article>
+</ion-content>

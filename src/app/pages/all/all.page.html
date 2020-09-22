@@ -1,5 +1,5 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="tertiary">
+  <ion-toolbar mode="ios">
 
     <ion-buttons slot="start">
       <ion-icon slot="icon-only" name="filter-outline"></ion-icon>
@@ -37,25 +37,25 @@
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
 
-    <ion-fab-button  color="tertiary">
+    <ion-fab-button >
       <ion-icon name="arrow-up" mode="ios"></ion-icon>
     </ion-fab-button>
 
     <ion-fab-list side="top" >
 
-      <ion-fab-button  color="tertiary" routerLink="/home/search">
+      <ion-fab-button routerLink="/home/search">
         <ion-icon name="search"></ion-icon>
       </ion-fab-button>
 
-  
     </ion-fab-list>
 
 
     <ion-fab-list side="start" >
 
-      <ion-fab-button color="tertiary" (click)="refresh()">
+      <ion-fab-button (click)="refresh()">
         <ion-icon mode="ios" name="sync-outline"></ion-icon>
       </ion-fab-button>
+      
     </ion-fab-list>
 
   </ion-fab>

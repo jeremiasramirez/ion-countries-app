@@ -39,7 +39,7 @@ export interface typeResponse {
         area: number,
         gini: number,
         timezones: string[],
-        borders: string[],
+        borders: [],
         nativeName: string,
         numericCode: string,
         currencies: CURRENCIES[],
@@ -60,3 +60,8 @@ export interface typeResponse {
         cioc: string
      
 }
+
+export interface slide{
+    title:string,
+    img:string;
+  }

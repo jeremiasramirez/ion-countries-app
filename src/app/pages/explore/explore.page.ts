@@ -21,17 +21,20 @@ export class ExplorePage   {
   constructor(public modal:ModalController, public router:Router, public feature:FeatureService) { 
  
     this.showToExplore();
-   
  
   }
 
 
   public showToExplore(){
-    timer(800).
-    subscribe(
+
+    timer(800).subscribe(
+
       ( ) =>{ this.continent = continents},
+
       ()=>{return},
+
       ()=>{this.spinner.on=false})
+
   }
 
   public onContinent(){
