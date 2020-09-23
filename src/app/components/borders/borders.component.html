@@ -1,5 +1,6 @@
-<ion-slides  [options]="slideOpts" *ngIf="!showBorders" pager="true" styles="heigth: 100px;">
-  <ion-slide *ngFor="let front of frontiers">
+<ion-slides  [options]="slideOpts" *ngIf="!showBorders" 
+pager="true" styles="heigth: 100px;">
+  <ion-slide *ngFor="let front of frontiers" (click)="showCountry(front)">
 
     <ion-card style="min-height: 230px;width: 100%;">
      

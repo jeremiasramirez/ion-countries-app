@@ -7,6 +7,7 @@ import {CommonModule } from "@angular/common";
 import { PipeSearch } from '../pipes/search.pipe';
 import { CountryComponent } from './country/country.component';
 import { BordersComponent } from './borders/borders.component';
+import { LicenceComponent } from './licence/licence.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { BordersComponent } from './borders/borders.component';
       CountryComponent,
       PipeSearch,
       EachItemComponent,
+      LicenceComponent,
       BordersComponent
     ],
     exports: [
@@ -29,6 +31,7 @@ import { BordersComponent } from './borders/borders.component';
       ContinentComponent,
       PipeSearch,
       EachItemComponent,
+      LicenceComponent,
       BordersComponent 
     ]
 })

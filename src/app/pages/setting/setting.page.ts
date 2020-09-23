@@ -4,6 +4,7 @@ import { ActionSheetController, ToastController, AlertController, ModalControlle
 import { timer } from 'rxjs';
 import { ReportComponent } from 'src/app/components/report/report.component';
 import { AboutPhoneComponent } from 'src/app/components/about-phone/about-phone.component';
+import { LicenceComponent } from 'src/app/components/licence/licence.component';
 
 @Component({
   selector: 'app-setting',
@@ -20,6 +21,7 @@ export class SettingPage  {
       private router:Router,
       private actionSheet:ActionSheetController,
       private modalReport:ModalController,
+      private modalLicence:ModalController,
       private modalAbout:ModalController) {
 
     this.verifiedStatusTheme();
@@ -37,7 +39,7 @@ export class SettingPage  {
     await toast.present()
   }
 
-  public verifiedStatusTheme(){
+  private verifiedStatusTheme(){
     if(localStorage.getItem("theme")  == "dark"){
       this.checkedTheme=true
     }
@@ -64,12 +66,12 @@ export class SettingPage  {
      //this.router.navigate(["/home"])
   }
 
-  public deleteCache(){
+  private deleteCache(){
     localStorage.clear(); 
     timer(1000).subscribe(()=>{ this.msjToast()})
   }
 
-  public async openSheet(){
+  private async openSheet(){
     
     const sheet = await this.actionSheet.create({
       header: "Caché",
@@ -85,7 +87,7 @@ export class SettingPage  {
 
   }
 
-  public async openVersion(){
+  private async openVersion(){
 
     const alerts = await this.alert.create({
       header: "Version",
@@ -97,7 +99,7 @@ export class SettingPage  {
     await alerts.present()
   }
 
-  public async openReport(){
+  private async openReport(){
 
     const report = await this.modalReport.create({
       component: ReportComponent
@@ -106,8 +108,14 @@ export class SettingPage  {
     await report.present()
 
   }
-
-  public async aboutPhone(){
+  private async openLicence(){
+    const licence = await this.modalLicence.create({
+      component: LicenceComponent
+    })
+    
+    await licence.present()
+  }
+  private async aboutPhone(){
 
     const aboutPh = await this.modalAbout.create({
       component: AboutPhoneComponent

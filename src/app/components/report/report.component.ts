@@ -18,6 +18,7 @@ export class ReportComponent implements OnInit {
   public async sendReport(){
     const toasts = await this.toast.create({
       message: 'Report successfully ',
+      mode:"ios",
       buttons:[{text: 'Ok', handler: ()=>this.closeModal()}],
       duration: 4000
     })

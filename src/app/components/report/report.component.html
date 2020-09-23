@@ -1,6 +1,6 @@
 
 <ion-header class="ion-no-border">
-  <ion-toolbar color="tertiary">
+  <ion-toolbar mode="ios">
    
     <ion-buttons slot="start">
       <ion-icon slot="icon-only" name="chatbubbles-outline"></ion-icon> 
@@ -8,8 +8,10 @@
   
     <ion-title>Report</ion-title>
   
-    <ion-buttons slot="end">
-      <ion-icon slot="icon-only" name="close" (click)="closeModal()"></ion-icon>  
+    <ion-buttons slot="end" mode="md">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close" ></ion-icon>  
+      </ion-button>
     </ion-buttons>
     
   </ion-toolbar>

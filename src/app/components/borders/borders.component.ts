@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { typeResponse } from 'src/app/services/country.service';
+import { CountryComponent } from '../country/country.component';
 
 @Component({
   selector: 'app-borders',
@@ -6,11 +9,20 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./borders.component.scss'],
 })
 export class BordersComponent implements OnInit {
-  @Input() showBorders:boolean;
-  @Input() frontiers=[];
+  @Input() private showBorders:boolean;
+  @Input() private frontiers=[];
   
-  constructor() { }
+  constructor(private modals:ModalController) { }
 
   ngOnInit() {}
 
+  private async showCountry(data:typeResponse){
+ 
+    const modal = await this.modals.create({
+      component: CountryComponent,
+      componentProps: {data:data}
+    })
+    await modal.present()
+    
+  }
 }

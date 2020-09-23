@@ -49,8 +49,7 @@ export class CountryComponent   {
 
           ).subscribe((frontiers_)=>{
             this.frontiers.push(frontiers_);
-            console.log(this.frontiers)
-          })
+          }) 
 
       }
   }
